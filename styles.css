@@ -202,6 +202,14 @@ h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 0.5rem 0; letter-spacing: -0.01e
   font-size: 0.95rem; color: var(--fg-2); line-height: 1.55;
 }
 .open-to strong { color: var(--fg); font-weight: 600; }
+.about-note {
+  margin-top: 1rem; padding: 0.7rem 0.95rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in oklab, var(--accent) 6%, transparent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem; color: var(--fg-2); line-height: 1.55;
+}
+.about-note strong { color: var(--fg); }
 .dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
   box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent);
