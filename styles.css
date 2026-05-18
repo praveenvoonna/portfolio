@@ -374,6 +374,12 @@ h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 0.5rem 0; letter-spacing: -0.01e
 .pub-card h3 a:hover .ext { transform: translate(2px, -2px); }
 .pub-meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--fg-muted); margin-bottom: 0.8rem; }
 .pub-card p:not(.pub-meta):not(.stack) { color: var(--fg-2); margin-bottom: 0.8rem; }
+.pub-card code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  padding: 1px 6px; border-radius: 4px;
+}
 
 
 /* =====================================================================

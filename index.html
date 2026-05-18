@@ -26,8 +26,9 @@
       <a href="#about"><span class="num">01.</span> About</a>
       <a href="#experience"><span class="num">02.</span> Experience</a>
       <a href="#publications"><span class="num">03.</span> Publications</a>
-      <a href="#skills"><span class="num">04.</span> Skills</a>
-      <a href="#contact"><span class="num">05.</span> Contact</a>
+      <a href="#opensource"><span class="num">04.</span> Open Source</a>
+      <a href="#skills"><span class="num">05.</span> Skills</a>
+      <a href="#contact"><span class="num">06.</span> Contact</a>
     </nav>
     <div class="nav-actions">
       <a class="btn-sm" href="assets/resume.pdf" target="_blank" rel="noopener">Résumé</a>
@@ -131,8 +132,19 @@
       </article>
     </section>
 
+    <section id="opensource" class="section reveal">
+      <h2 class="section-h"><span class="section-num">04.</span> Open Source<span class="section-rule"></span></h2>
+      <article class="pub-card">
+        <div class="pub-tag">2025 · Go networking library · 152★ · 72 forks</div>
+        <h3><a href="https://github.com/ishidawataru/sctp/commits/master?author=praveenvoonna" target="_blank" rel="noopener">ishidawataru/sctp — SyscallConn() for SCTPConn &amp; SCTPListener<span class="ext">↗</span></a></h3>
+        <p class="pub-meta">3 commits authored · reviewed &amp; merged by maintainer Wataru Ishida</p>
+        <p>Added <code>SyscallConn()</code> on <code>SCTPConn</code> and <code>SCTPListener</code> with unit tests — exposes <code>syscall.RawConn</code> for socket-option work and aligns the de-facto Go SCTP library with the stdlib <code>net.Conn</code> / <code>net.Listener</code> interface contract. Drove the change from a real production need on Cisco's 5G mobility platform back into upstream open source.</p>
+        <p class="stack"><span>Go</span><span>SCTP</span><span>syscall.RawConn</span><span>net.Conn</span><span>Linux sockets</span></p>
+      </article>
+    </section>
+
     <section id="skills" class="section reveal">
-      <h2 class="section-h"><span class="section-num">04.</span> Skills<span class="section-rule"></span></h2>
+      <h2 class="section-h"><span class="section-num">05.</span> Skills<span class="section-rule"></span></h2>
       <div class="skill-grid">
         <div class="skill-card"><h4>Languages</h4><p>Go · Java · Python · JavaScript · SQL</p></div>
         <div class="skill-card"><h4>Backend &amp; Distributed Systems</h4><p>gRPC · REST · Microservices · Goroutines &amp; channels · etcd · Event-driven · Observability</p></div>
@@ -144,7 +156,7 @@
     </section>
 
     <section id="contact" class="section reveal contact-section">
-      <p class="kicker">05. What's Next</p>
+      <p class="kicker">06. What's Next</p>
       <h2 class="display-sm">Let's build something.</h2>
       <p class="contact-lede">I'm available immediately and reading every email. Whether it's a role, a question about the AppLLM disclosure, or just wanting to talk Go and distributed systems — my inbox is open.</p>
       <a class="btn primary big" href="mailto:praveenvoonna17@gmail.com">Say Hello →</a>
