@@ -28,7 +28,8 @@
       <a href="#publications"><span class="num">03.</span> Publications</a>
       <a href="#opensource"><span class="num">04.</span> Open Source</a>
       <a href="#skills"><span class="num">05.</span> Skills</a>
-      <a href="#contact"><span class="num">06.</span> Contact</a>
+      <a href="#education"><span class="num">06.</span> Education</a>
+      <a href="#contact"><span class="num">07.</span> Contact</a>
     </nav>
     <div class="nav-actions">
       <a class="btn-sm" href="assets/resume.pdf" target="_blank" rel="noopener">Résumé</a>
@@ -52,7 +53,7 @@
         <li><span class="stat-num">6+</span><span class="stat-lbl">years backend</span></li>
         <li><span class="stat-num">90s → 20s</span><span class="stat-lbl">API latency cut</span></li>
         <li><span class="stat-num">7d → 6h</span><span class="stat-lbl">ETL runtime cut</span></li>
-        <li><span class="stat-num">93 → 99%</span><span class="stat-lbl">UT coverage on 155k LOC</span></li>
+        <li><span class="stat-num">93 → 99%</span><span class="stat-lbl">UT coverage on 150k LOC</span></li>
       </ul>
     </section>
 
@@ -62,7 +63,7 @@
         <div>
           <p>I build the unglamorous parts of the stack that have to keep working — the routing protocols, the retry frameworks, the on-call pages that wake you at 3 a.m. I like systems where correctness is non-negotiable and where a single misplaced lock is the difference between a happy customer and a Sev-1.</p>
           <p>At Cisco I work on the shared control plane underpinning 5G mobility network functions deployed by tier-1 telco operators. Before that I led backend &amp; ETL optimisation for Anywhere Real Estate (Realogy) at LTIMindtree, and built full-stack utility platforms for PG&amp;E and APS at Infosys.</p>
-          <p>I'm <strong>currently serving notice</strong> and open to Senior&nbsp;SDE / SDE-2 / Backend Engineer roles in distributed systems, networking infrastructure, or AI-infrastructure teams. Open to Hyderabad, Bengaluru, or remote-first.</p>
+          <p>I'm <strong>currently serving notice</strong> and open to Senior&nbsp;SDE / SDE-2 / Backend Engineer roles in distributed systems, networking infrastructure, or AI-infrastructure teams. Based in Pune; open to Bengaluru, Hyderabad, or remote-first.</p>
           <p class="about-note">Recognised by Cisco's <strong>President &amp; Chief Product Officer, Jeetu Patel</strong>, for AI fluency in engineering practice — Connected Recognition (<em>You Inspire 2</em>), June 2025.</p>
         </div>
         <aside class="about-side">
@@ -84,10 +85,11 @@
           <h3>Software Engineer · <span class="role-co">Cisco Systems</span></h3>
           <p class="role-sum">5G Mobility App-Infra team — own features end-to-end across the BGP/BFD/SCTP networking stack and the Kubernetes platform they run on.</p>
           <ul>
-            <li>Designed and shipped <strong>IPv6-only BGP bring-up</strong>, BGP gRPC management-plane decoupling, a route-addition retry framework, BFD source-port hardening (RFC 5881), and SCTP DSCP marking — all running on cloud-native NFs deployed by tier-1 telcos.</li>
+            <li>Designed and shipped <strong>IPv6-only BGP bring-up</strong>, BGP gRPC management-plane decoupling, a route-addition retry framework with exponential backoff and static-route failover, and <strong>end-to-end QoS (DSCP) classification for SCTP transport</strong> — all running on cloud-native NFs deployed by tier-1 telcos.</li>
+            <li>Re-engineered the <strong>BFD subsystem</strong> with RFC&nbsp;5881-compliant port allocation, bounded retries and etcd caching — cutting control-plane watch traffic <strong>~70%</strong> and clearing 4 customer escalations across 2 release branches.</li>
             <li>Drove Go, Kubernetes, gRPC and base-image upgrades across <strong>8+ infrastructure repositories</strong>; coordinated with multiple downstream teams.</li>
             <li>Resolved <strong>25+ customer escalations</strong> with patches backported across multiple release branches.</li>
-            <li>Raised unit-test coverage of the <strong>~155k-LOC Go codebase from 93% to 99%</strong> by targeting error paths, concurrency edges and CLI handlers.</li>
+            <li>Raised unit-test coverage of the <strong>~150k-LOC Go codebase from 93% to 99%</strong> by targeting error paths, concurrency edges and CLI handlers; the new tests caught 5+ regressions pre-merge.</li>
           </ul>
           <p class="stack"><span>Go</span><span>Kubernetes</span><span>gRPC</span><span>etcd</span><span>Helm</span><span>GoBGP</span><span>Linux netlink</span></p>
         </div>
@@ -99,8 +101,8 @@
           <h3>Senior Software Engineer · <span class="role-co">LTIMindtree</span></h3>
           <p class="role-sum">Backend lead on Anywhere Real Estate (Realogy) — Go gRPC and REST APIs across 10–15 service repos and 100+ endpoints, on AWS.</p>
           <ul>
-            <li><strong>Cut search API p95 latency from ~90s to ~20s</strong> via query restructuring, caching and async fan-out.</li>
-            <li><strong>Refactored an Oracle → MongoDB ETL pipeline from 7 days to 6 hours</strong> using goroutine and channel patterns.</li>
+            <li><strong>Cut a high-traffic search API's p95 latency from ~90s to ~20s (4.5× faster)</strong> and CPU usage by ~40% via Go parallel processing with bounded concurrency.</li>
+            <li><strong>Re-engineered an Oracle → MongoDB ETL pipeline from 7 days to 6 hours (28× faster)</strong> using concurrent worker pools and batched processing, enabling daily reporting.</li>
             <li>Introduced field-level access control and hardened authn/authz across the platform.</li>
           </ul>
           <p class="stack"><span>Go</span><span>gRPC</span><span>REST</span><span>MongoDB</span><span>Oracle</span><span>AWS</span></p>
@@ -148,15 +150,26 @@
       <div class="skill-grid">
         <div class="skill-card"><h4>Languages</h4><p>Go · Java · Python · JavaScript · SQL</p></div>
         <div class="skill-card"><h4>Backend &amp; Distributed Systems</h4><p>gRPC · REST · Microservices · Goroutines &amp; channels · etcd · Event-driven · Observability · Prometheus</p></div>
-        <div class="skill-card"><h4>Cloud &amp; Platform</h4><p>Kubernetes · Docker · Helm · AWS (ECS, S3, Lambda, DynamoDB) · CI/CD · Linux systems programming</p></div>
+        <div class="skill-card"><h4>Cloud &amp; Platform</h4><p>Kubernetes · Docker · Helm · AWS (ECS, EC2, S3, Lambda, Kinesis, CloudWatch) · CI/CD · Linux systems programming</p></div>
         <div class="skill-card"><h4>Databases</h4><p>MongoDB Atlas · Oracle · MySQL · DynamoDB</p></div>
         <div class="skill-card"><h4>Networking</h4><p>BGP · BFD · SCTP · TCP/UDP · IPv4 / IPv6 · VPP · DPI</p></div>
         <div class="skill-card"><h4>Applied AI</h4><p>LLM fine-tuning (LoRA) · Chain-of-Thought reasoning · AI-assisted dev (Claude, Augment Code)</p></div>
       </div>
     </section>
 
+    <section id="education" class="section reveal">
+      <h2 class="section-h"><span class="section-num">06.</span> Education<span class="section-rule"></span></h2>
+      <article class="role">
+        <div class="role-time"><time>2019</time><span class="role-loc">Odisha</span></div>
+        <div class="role-body">
+          <h3>B.Tech, Computer Science Engineering (Honours) · <span class="role-co">IGIT Sarang</span></h3>
+          <p class="role-sum">Indira Gandhi Institute of Technology, Sarang · Biju Patnaik University of Technology, Odisha.</p>
+        </div>
+      </article>
+    </section>
+
     <section id="contact" class="section reveal contact-section">
-      <p class="kicker">06. What's Next</p>
+      <p class="kicker">07. What's Next</p>
       <h2 class="display-sm">Let's build something.</h2>
       <p class="contact-lede">I'm available immediately and reading every email. Whether it's a role, a question about the AppLLM disclosure, or just wanting to talk Go and distributed systems — my inbox is open.</p>
       <a class="btn primary big" href="mailto:praveenvoonna17@gmail.com">Say Hello →</a>
